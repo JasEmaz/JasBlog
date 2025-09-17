@@ -182,25 +182,25 @@ src/
 
 ## 🚀 Development Phases
 
-### Phase 1: Foundation (Week 1-2)
+### Phase 1: Foundation 
 - Project setup and AI tooling configuration
 - Authentication system with Supabase
 - Basic blog post CRUD operations
 - Core UI components with shadcn/ui
 
-### Phase 2: Content Management (Week 3-4)  
+### Phase 2: Content Management  
 - MDX rendering and editor integration
 - Tag and category system
 - Draft/publish workflow
 - Author dashboard
 
-### Phase 3: Reader Experience (Week 5-6)
+### Phase 3: Reader Experience 
 - Public blog pages and navigation
 - Search functionality with AI enhancement
 - Commenting system
 - SEO optimization
 
-### Phase 4: AI Enhancement (Week 7-8)
+### Phase 4: AI Enhancement 
 - Content suggestions and auto-tagging
 - Performance optimization
 - Advanced analytics
