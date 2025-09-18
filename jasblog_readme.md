@@ -28,7 +28,7 @@ This project serves as part of the **ALX AI for Developers Capstone Project**, d
 ## 🛠️ Tech Stack
 
 ### Frontend
-- **Next.js 14** (App Router) - React framework with server-side rendering
+- **Next.js 15** (App Router) - React framework with server-side rendering
 - **TypeScript** - Type safety and better developer experience
 - **TailwindCSS** - Utility-first CSS framework
 - **shadcn/ui** - Reusable component library

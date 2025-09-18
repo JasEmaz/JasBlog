@@ -1,0 +1,230 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Light Theme - Clean and Professional */
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    
+    /* AI-Enhanced Color Palette */
+    --primary: 217.2 91.2% 59.8%; /* Electric Blue #3b82f6 */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222.2 84% 4.9%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96%;
+    --accent-foreground: 222.2 84% 4.9%;
+    
+    /* Success/Tags - Emerald Green */
+    --success: 142.1 76.2% 36.3%; /* #10b981 */
+    --success-foreground: 0 0% 100%;
+    
+    /* Warning/Featured - Amber */
+    --warning: 32.1 94.6% 43.7%; /* #f59e0b */
+    --warning-foreground: 0 0% 100%;
+    
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 217.2 91.2% 59.8%;
+    --radius: 0.75rem; /* Increased for modern look */
+    
+    /* Gradient Variables */
+    --gradient-primary: linear-gradient(135deg, hsl(217.2 91.2% 59.8%) 0%, hsl(142.1 76.2% 36.3%) 100%);
+    --gradient-surface: linear-gradient(135deg, hsl(0 0% 100%) 0%, hsl(210 40% 98%) 100%);
+  }
+
+  .dark {
+    /* Dark Theme - Deep and Sophisticated */
+    --background: 222.2 84% 4.9%; /* Deep charcoal #0a0a0a */
+    --foreground: 0 0% 100%; /* High contrast white */
+    --card: 217.2 32.6% 17.5%; /* Elevated surface #2a2a2a */
+    --card-foreground: 0 0% 100%;
+    --popover: 217.2 32.6% 17.5%;
+    --popover-foreground: 0 0% 100%;
+    
+    /* AI-Enhanced Dark Palette */
+    --primary: 217.2 91.2% 59.8%; /* Electric Blue maintained */
+    --primary-foreground: 222.2 84% 4.9%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%; /* Medium gray #a0a0a0 */
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 0 0% 100%;
+    
+    /* Success/Tags - Emerald Green (adjusted for dark) */
+    --success: 142.1 76.2% 36.3%;
+    --success-foreground: 0 0% 100%;
+    
+    /* Warning/Featured - Amber (adjusted for dark) */
+    --warning: 32.1 94.6% 43.7%;
+    --warning-foreground: 0 0% 100%;
+    
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 217.2 91.2% 59.8%;
+    
+    /* Dark Gradient Variables */
+    --gradient-primary: linear-gradient(135deg, hsl(217.2 91.2% 59.8%) 0%, hsl(142.1 76.2% 36.3%) 100%);
+    --gradient-surface: linear-gradient(135deg, hsl(222.2 84% 4.9%) 0%, hsl(217.2 32.6% 17.5%) 100%);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Custom styles for MDX content */
+.prose {
+  @apply max-w-none;
+}
+
+.prose h1 {
+  @apply text-3xl font-bold tracking-tight lg:text-4xl;
+}
+
+.prose h2 {
+  @apply text-2xl font-semibold tracking-tight;
+}
+
+.prose h3 {
+  @apply text-xl font-semibold tracking-tight;
+}
+
+.prose p {
+  @apply leading-7 [&:not(:first-child)]:mt-6;
+}
+
+.prose blockquote {
+  @apply mt-6 border-l-2 pl-6 italic;
+}
+
+.prose code {
+  @apply relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold;
+}
+
+.prose pre {
+  @apply overflow-x-auto rounded-lg bg-muted p-4;
+}
+
+.prose pre code {
+  @apply bg-transparent p-0;
+}
+
+/* Loading states */
+.loading-skeleton {
+  @apply animate-pulse bg-muted;
+}
+
+/* Custom scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  @apply bg-muted;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  @apply bg-muted-foreground/30 rounded-full;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  @apply bg-muted-foreground/50;
+}
+
+/* Enhanced UI Components */
+.glass-effect {
+  @apply bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60;
+}
+
+.gradient-text {
+  @apply bg-gradient-to-r from-primary to-success bg-clip-text text-transparent;
+}
+
+.card-hover {
+  @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-lg;
+}
+
+.featured-glow {
+  @apply relative before:absolute before:-inset-1 before:rounded-lg before:bg-gradient-to-r before:from-primary before:to-success before:opacity-20 before:blur-sm;
+}
+
+/* Typography Enhancements */
+.heading-primary {
+  @apply text-3xl font-bold tracking-tight lg:text-4xl xl:text-5xl;
+}
+
+.heading-secondary {
+  @apply text-2xl font-semibold tracking-tight lg:text-3xl;
+}
+
+.heading-tertiary {
+  @apply text-xl font-semibold tracking-tight lg:text-2xl;
+}
+
+.body-large {
+  @apply text-lg leading-relaxed;
+}
+
+.body-regular {
+  @apply text-base leading-7;
+}
+
+.caption {
+  @apply text-sm text-muted-foreground;
+}
+
+/* Interactive Elements */
+.interactive-scale {
+  @apply transition-transform duration-200 hover:scale-105 active:scale-95;
+}
+
+.focus-ring {
+  @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2;
+}
+
+/* Layout Utilities */
+.container-wide {
+  @apply container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+}
+
+.grid-auto-fit {
+  @apply grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))];
+}
+
+/* Animation Classes */
+.fade-in {
+  @apply animate-in fade-in-0 duration-500;
+}
+
+.slide-up {
+  @apply animate-in slide-in-from-bottom-4 duration-500;
+}
+
+.stagger-children > * {
+  @apply animate-in fade-in-0 slide-in-from-bottom-4 duration-500;
+}
+
+.stagger-children > *:nth-child(1) { animation-delay: 0ms; }
+.stagger-children > *:nth-child(2) { animation-delay: 100ms; }
+.stagger-children > *:nth-child(3) { animation-delay: 200ms; }
+.stagger-children > *:nth-child(4) { animation-delay: 300ms; }
+.stagger-children > *:nth-child(5) { animation-delay: 400ms; }
+.stagger-children > *:nth-child(6) { animation-delay: 500ms; }
